@@ -21,8 +21,135 @@
 <meta name="twitter:url" content="" />
 <meta name="twitter:description" content="<%= description %>" />
 <meta name="twitter:image" content="" /><!--絶対パスで記述-->
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title><%= title %></title>
 </head>
 <body>
 <div class="l-wrap">
+  <header class="l-header">
+    <div class="p-headerContents">
+      <div class="p-headerContents__logo">
+        <h1 class="c-logo">Paul Smith</h1>
+      </div>
+        <div class="p-headerMenu">
+          <ul class="p-headerMenu__list">
+            <li class="p-headerMenu__item"><a href="#">店舗検索</a></li>
+            <li class="p-headerMenu__item"><a href="#">検索</a></li>
+            <li class="p-headerMenu__item"><a href="#">ヘルプ</a></li>
+          </ul>
+
+          <div class="p-headerMenu__icon">
+            <ul class="p-headerMenu__iconList">
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
+                </a>
+              </li>
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
+                </a>
+              </li>
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+        <nav class="l-navigation">
+          <ul class="p-navigationList">
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">セール</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">新着</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">メンズ</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ウィメンズ</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ジュニア</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ホーム</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ギフト</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ディスカバー</a>
+            </li>
+          </ul>
+        </nav>
+
+
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".l-header");
+            const navigation = document.querySelector(".l-navigation");
+            const logo = document.querySelector(".p-headerContents__logo");
+            const headerContents = document.querySelector(".p-headerContents");
+
+            const breakSP = 990;
+            let lastScrollY = window.scrollY;
+
+            // ヘッダー表示/非表示
+            const toggleHeaderVisibility = () => {
+              const currentScrollY = window.scrollY;
+
+              if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // 下にスクロールした場合
+                header.classList.add("hidden");
+              } else if (currentScrollY < lastScrollY) {
+                // 上にスクロールした場合
+                header.classList.remove("hidden");
+              }
+
+              //`l-navigation` を非表示
+              if (window.innerWidth < breakSP) {
+                if (currentScrollY > lastScrollY) {
+                  navigation.style.display = "none";
+                } else if (currentScrollY === 0) {
+                  navigation.style.display = "flex";
+                }
+              }
+
+              lastScrollY = currentScrollY;
+            };
+
+            // ナビゲーションを元の位置に戻す
+            const resetNavigation = () => {
+
+              if (window.innerWidth >= breakSP) {
+                console.log("SP以上: ナビゲーションをロゴの直後に移動");
+                headerContents.insertBefore(navigation, logo.nextSibling);
+                navigation.style.display = "";
+              } else {
+                console.log("SP未満: ナビゲーションを元の位置に戻す");
+                header.appendChild(navigation);
+                navigation.style.display = "flex";
+              }
+            };
+
+            // イベントリスナーを登録
+            window.addEventListener("scroll", toggleHeaderVisibility);
+            window.addEventListener("resize", resetNavigation);
+
+            // 初期実行
+            resetNavigation();
+          });
+
+
+
+      </script>
+
+  </header>

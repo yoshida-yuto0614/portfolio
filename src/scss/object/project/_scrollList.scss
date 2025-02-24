@@ -1,0 +1,17 @@
+.p-scrollList {
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &__item{
+    scroll-snap-align: center;
+    height: 50vh;
+    flex: none;
+    width: 300px;
+    margin: 16px;
+    img {
+      width: 100%;
+    }
+  }
+}

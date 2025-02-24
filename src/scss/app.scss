@@ -12,7 +12,12 @@
 // Layout
 // ==========================================================================*/
 
+@use 'layout/_header';
+@use 'layout/_main';
 @use 'layout/_footer';
+@use 'layout/_navigation';
+@use 'layout/_wrap';
+@use 'layout/_scroll';
 
 /*// ==========================================================================
 // Object
@@ -23,6 +28,11 @@
 // -----------------------------------------------------------------*/
 
 @use 'object/component/_btn';
+@use 'object/component/_arrow';
+@use 'object/component/_logo';
+@use 'object/component/_icon';
+@use 'object/component/_text';
+@use 'object/component/_img';
 
 
 /*// -----------------------------------------------------------------
@@ -30,6 +40,11 @@
 // -----------------------------------------------------------------*/
 
 @use 'object/project/_home';
+@use 'object/project/_mainSection';
+@use 'object/project/_headerContents';
+@use 'object/project/_headerMenu';
+@use 'object/project/_navigationList';
+@use 'object/project/_scrollList';
 
 /*// -----------------------------------------------------------------
 // Utility

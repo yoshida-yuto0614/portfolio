@@ -1,0 +1,15 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-navigation {
+  display: flex;
+  align-items: center;
+  @include sp {
+      margin-top: 5px;
+      transition: opacity 0.3s ease-in-out;
+    }
+}

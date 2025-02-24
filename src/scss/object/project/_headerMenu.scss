@@ -1,0 +1,52 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-headerMenu {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item  {
+    margin-right: 10px;
+    a {
+      text-decoration: none;
+      color: #000;
+      transition: color 0.3s;
+      font-size: 1rem;
+      font-weight: bold;
+      @include sp {
+        font-size: 0.8rem;
+        }
+    }
+  }
+
+  &__icon {
+  display: flex;
+  align-items: center;
+}
+
+  &__iconList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__iconItem {
+    margin-right: 10px;
+
+    &:nth-child(3) {
+        margin-right: 0;
+      }
+  }
+}

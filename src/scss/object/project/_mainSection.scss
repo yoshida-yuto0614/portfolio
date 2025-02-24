@@ -1,0 +1,31 @@
+.p-mainSection {
+  &__img {
+    position: relative;
+}
+
+&__mensTitle {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  text-align: left;
+  width: 30%;
+  white-space: nowrap;
+  }
+
+&__womensTitle {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  text-align: left;
+  width: 30%;
+  white-space: nowrap;
+  }
+}

@@ -1,4 +1,7 @@
- <!DOCTYPE html>
+
+
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
@@ -7,31 +10,247 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="./assets/images/fav.png" />
 <!--facebook用-->
-<meta property="og:title" content="TOP" />
+<meta property="og:title" content="Portfolio" />
 <meta property="og:description" content="トップのdescription" />
 <meta property="og:url" content="" />
 <meta property="og:image" content="" /><!--絶対パスで記述-->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="TOP" />
+<meta property="og:site_name" content="Portfolio" />
 <meta property="og:locale" content="ja_JP" />
 <!--twitter用-->
 <meta name="twitter:card" content="summary_large_image" /><!-- summary summary_large_image photo gallery appから選ぶ -->
 <!-- <meta name="twitter:site" content="" /> --><!--twitterがあれば記述-->
-<meta name="twitter:title" content="TOP" />
+<meta name="twitter:title" content="Portfolio" />
 <meta name="twitter:url" content="" />
 <meta name="twitter:description" content="トップのdescription" />
 <meta name="twitter:image" content="" /><!--絶対パスで記述-->
-
-<title>TOP</title>
-<link href="assets/stylesheets/bundle5dc5343818e3f191fa45.css" rel="stylesheet"></head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Portfolio</title>
+<link href="assets/stylesheets/bundlec930b48813e6af5fe574.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
+  <header class="l-header">
+    <div class="p-headerContents">
+      <div class="p-headerContents__logo">
+        <h1 class="c-logo">Paul Smith</h1>
+      </div>
+        <div class="p-headerMenu">
+          <ul class="p-headerMenu__list">
+            <li class="p-headerMenu__item"><a href="#">店舗検索</a></li>
+            <li class="p-headerMenu__item"><a href="#">検索</a></li>
+            <li class="p-headerMenu__item"><a href="#">ヘルプ</a></li>
+          </ul>
+
+          <div class="p-headerMenu__icon">
+            <ul class="p-headerMenu__iconList">
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
+                </a>
+              </li>
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
+                </a>
+              </li>
+              <li class="p-headerMenu__iconItem">
+                <a class="p-headerMenu__iconItem--img" href="#">
+                  <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+        <nav class="l-navigation">
+          <ul class="p-navigationList">
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">セール</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">新着</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">メンズ</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ウィメンズ</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ジュニア</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ホーム</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ギフト</a>
+            </li>
+            <li class="p-navigationList__item">
+              <a href="#" class="p-navigationList__title">ディスカバー</a>
+            </li>
+          </ul>
+        </nav>
 
 
-<h1>トップページへようこそ！！</h1>
-<a href="/about">to about</a>
-<div class="p-home-bg"></div>
-<div class="p-home-grid"></div>
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".l-header");
+            const navigation = document.querySelector(".l-navigation");
+            const logo = document.querySelector(".p-headerContents__logo");
+            const headerContents = document.querySelector(".p-headerContents");
+
+            const breakSP = 990;
+            let lastScrollY = window.scrollY;
+
+            // ヘッダー表示/非表示
+            const toggleHeaderVisibility = () => {
+              const currentScrollY = window.scrollY;
+
+              if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // 下にスクロールした場合
+                header.classList.add("hidden");
+              } else if (currentScrollY < lastScrollY) {
+                // 上にスクロールした場合
+                header.classList.remove("hidden");
+              }
+
+              //`l-navigation` を非表示
+              if (window.innerWidth < breakSP) {
+                if (currentScrollY > lastScrollY) {
+                  navigation.style.display = "none";
+                } else if (currentScrollY === 0) {
+                  navigation.style.display = "flex";
+                }
+              }
+
+              lastScrollY = currentScrollY;
+            };
+
+            // ナビゲーションを元の位置に戻す
+            const resetNavigation = () => {
+
+              if (window.innerWidth >= breakSP) {
+                console.log("SP以上: ナビゲーションをロゴの直後に移動");
+                headerContents.insertBefore(navigation, logo.nextSibling);
+                navigation.style.display = "";
+              } else {
+                console.log("SP未満: ナビゲーションを元の位置に戻す");
+                header.appendChild(navigation);
+                navigation.style.display = "flex";
+              }
+            };
+
+            // イベントリスナーを登録
+            window.addEventListener("scroll", toggleHeaderVisibility);
+            window.addEventListener("resize", resetNavigation);
+
+            // 初期実行
+            resetNavigation();
+          });
+
+
+
+      </script>
+
+  </header>
+
+<main>
+  <main class="l-main">
+    <div class="p-mainSection">
+      <div class="p-mainSection__img">
+        <img src="assets/images/AdobeStock_721269505.jpg" alt="背景">
+        <a class="p-mainSection__mensTitle c-text__20px" href="#">Shop Mens</a>
+        <a class="p-mainSection__womensTitle c-text__20px" href="#">Shop Womens</a>
+        </div>
+    </div>
+
+        <div class="l-scroll">
+          <ul class="p-scrollList">
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="" alt="">
+                <h2 class="c-text__26px">Sale Up To 70% Off</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mshoes.jpg" alt="">
+                <h2 class="c-text__26px">シューズ&スニーカー</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mshirt.jpg" alt="">
+                <h2 class="c-text__26px">カジュアルシャツ</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/msweatshirt.jpg" alt="">
+                <h2 class="c-text__26px">スウェット&パーカー</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mt-shirt.jpg" alt="">
+                <h2 class="c-text__26px">Tシャツ</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mshoes.jpg" alt="">
+                <h2 class="c-text__26px">シューズ</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mjewelry.jpg" alt="">
+                <h2 class="c-text__26px">ジュエリー</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+            <li class="p-scrollList__item">
+              <a href="#">
+                <img src="assets/images/mouter.jpg" alt="">
+                <h2 class="c-text__26px">コート&アウター</h2>
+              </a>
+              <a href="">商品を見る</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        </main>
+
+<footer class="l-footer">
+  <footer class="p-footerMenu">
+    <div class="p-footerMenu_title">ポール・スミスについて</div>
+    <ul class="p-footerMenu_list">
+      <li class="p-footer_item">
+        <a href="#">会社情報</a>
+      </li>
+      <li class="p-footer_item">
+        <a href="#">採用(英国サイト)</a>
+      </li>
+      <li class="p-footer_item">
+        <a href="#">サステナビリティ</a>
+      </li>
+    </ul>
+  </footer>
+</footer>
+
+
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundle5dc5343818e3f191fa45.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundlec930b48813e6af5fe574.js"></script></body>
 </html>
+
