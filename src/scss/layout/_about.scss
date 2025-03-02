@@ -1,0 +1,21 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-aboutList {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    padding: 30px 30px;
+    border-right: 2px #000 solid;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+}
+}

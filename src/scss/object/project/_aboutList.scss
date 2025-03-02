@@ -1,0 +1,11 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-about {
+  text-align: center;
+  width: 100%;
+}

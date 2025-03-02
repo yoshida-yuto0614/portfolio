@@ -18,6 +18,8 @@
 @use 'layout/_navigation';
 @use 'layout/_wrap';
 @use 'layout/_scroll';
+@use 'layout/_about';
+@use 'layout/_animationBar';
 
 /*// ==========================================================================
 // Object
@@ -45,6 +47,8 @@
 @use 'object/project/_headerMenu';
 @use 'object/project/_navigationList';
 @use 'object/project/_scrollList';
+@use 'object/project/_aboutList';
+@use 'object/project/_animationList';
 
 /*// -----------------------------------------------------------------
 // Utility

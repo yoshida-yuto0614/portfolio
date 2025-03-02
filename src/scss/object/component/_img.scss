@@ -1,3 +1,18 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
 .c-img {
   position: relative;
+
+  &__about {
+    width: 100%;
+    }
+
+  &__animation {
+    width: 100px;
+  }
 }

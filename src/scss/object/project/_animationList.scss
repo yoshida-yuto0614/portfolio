@@ -1,0 +1,32 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-animationList {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--scroll-gap);
+  width: max-content;
+  animation: infiniteScroll 15s linear infinite;
+  width: max-content;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 30px;
+  }
+    @keyframes infiniteScroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+}
