@@ -1,9 +1,10 @@
 .c-arrow {
     display: inline-block;
-    font-size: 30px;
+    font-size: 15px;
     transition: transform 0.25s ease-in-out;
+    margin-left: 10px;
   }
 
   .c-arrow:hover {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
   }

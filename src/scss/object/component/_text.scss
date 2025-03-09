@@ -1,7 +1,14 @@
-.c-text__50px {
-  font-size: 50px;
-  font-weight: bold;
-  color: #fff;
+.c-text__13px {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+.c-text__15px {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .c-text__20px {
@@ -11,6 +18,25 @@
 }
 
 .c-text__26px {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.c-text__28px {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.c-text__50px {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.c-text__vh {
   font-size: 3.5vw;
   font-weight: bolder;
 }

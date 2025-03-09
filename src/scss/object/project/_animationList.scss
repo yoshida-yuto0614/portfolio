@@ -19,6 +19,9 @@ $sp: 990px;
     align-items: center;
     flex-shrink: 0;
     margin-right: 30px;
+    img {
+      margin-right: 30px;
+    }
   }
     @keyframes infiniteScroll {
       0% {

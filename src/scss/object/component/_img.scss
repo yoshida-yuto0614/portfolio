@@ -9,7 +9,9 @@ $sp: 990px;
   position: relative;
 
   &__about {
-    width: 100%;
+    width: 450px;
+    height: 550px;
+    object-fit: cover;
     }
 
   &__animation {
