@@ -8,8 +8,11 @@ $sp: 990px;
 .l-navigation {
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 160px;
   @include sp {
       margin-top: 5px;
       transition: opacity 0.3s ease-in-out;
+      position: unset;
     }
 }
