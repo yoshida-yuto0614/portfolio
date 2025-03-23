@@ -8,6 +8,10 @@ $sp: 990px;
 .p-headerMenu {
   display: flex;
   align-items: center;
+  margin: 20px;
+  @include sp {
+     margin: 0px;
+    }
 
   &__list {
     display: flex;

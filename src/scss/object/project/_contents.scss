@@ -1,0 +1,13 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-contents {
+  &__item {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+}

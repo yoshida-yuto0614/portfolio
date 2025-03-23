@@ -1,3 +1,15 @@
-.footer {
-	color: #fff;
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-footer {
+  color: #fff;
+    background-color: #333;
+    padding: 100px 10% 0;
+    display: flex;
+    height: 800px;
+    position: relative;
 }

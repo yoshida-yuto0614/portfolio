@@ -5,19 +5,9 @@ $sp: 990px;
   }
 }
 
-.p-aboutList {
+.l-about {
+  padding: 0 30px;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
-
-  &__item {
-    padding: 30px 30px;
-    border-right: 2px #000 solid;
-  }
-
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
+  justify-content: center;
 }

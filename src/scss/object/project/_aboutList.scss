@@ -5,7 +5,42 @@ $sp: 990px;
   }
 }
 
-.l-about {
-  text-align: center;
-  width: 100%;
+.p-aboutList {
+  display: flex;
+  justify-content: center;
+
+  @include sp {
+    display: flex;
+    flex-flow: column;
+  }
+
+
+  &__item {
+    padding: 60px 120px;
+    border-right: 1px #000 solid;
+
+    &:nth-child(3) {
+      border-right: none;
+    }
+
+  @include sp {
+    border-bottom: 1px #000 solid;
+    border-right: none;
+
+    &:nth-child(3) {
+        border-bottom: none;
+      }
+  }
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    &:hover .c-arrow {
+      transform: rotate(45deg);
+    }
+  }
 }

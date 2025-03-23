@@ -1,0 +1,27 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-footerMenu {
+  display: flex;
+  flex-flow: column wrap;
+  height: 400px;
+
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: bolder;
+  }
+
+  &__list {
+    margin: 50px 100px 0 0;
+
+    &:nth-child(5) {
+        display: none;
+      }
+  }
+
+}
