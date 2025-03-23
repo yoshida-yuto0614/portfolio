@@ -16,7 +16,7 @@ $sp: 990px;
 
 
   &__item {
-    padding: 60px 120px;
+    padding: 60px 60px;
     border-right: 1px #000 solid;
 
     &:nth-child(3) {
@@ -24,6 +24,7 @@ $sp: 990px;
     }
 
   @include sp {
+    padding: 60px 0px;
     border-bottom: 1px #000 solid;
     border-right: none;
 

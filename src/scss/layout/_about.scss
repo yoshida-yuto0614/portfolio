@@ -6,8 +6,12 @@ $sp: 990px;
 }
 
 .l-about {
-  padding: 0 30px;
+  padding: 0;
   text-align: center;
   display: flex;
   justify-content: center;
+
+  @include sp {
+    padding: 0 200px;
+    }
 }
