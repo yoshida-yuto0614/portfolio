@@ -1,0 +1,11 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-termsList {
+  font-size: 12px;
+  color: #828282;
+}

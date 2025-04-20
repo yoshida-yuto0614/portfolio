@@ -8,8 +8,75 @@
         </div>
     </div>
 
+    <div class="c-btn">
+      <button class="c-btn__men" id="m_btn">メンズ</button>
+      <button class="c-btn__women" id="w_btn">ウィメンズ</button>
+    </div>
 
-    <div class="l-scroll">
+  <div class="l-scroll">
+    <div class="l-scroll__men">
+      <ul class="p-scrollList">
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="" alt="">
+            <h2 class="c-text__vh"></h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mshoes.jpg" alt="">
+            <h2 class="c-text__vh">シューズ&スニーカー</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mshirt.jpg" alt="">
+            <h2 class="c-text__vh">カジュアルシャツ</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/msweatshirt.jpg" alt="">
+            <h2 class="c-text__vh">スウェット&パーカー</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mt-shirt.jpg" alt="">
+            <h2 class="c-text__vh">Tシャツ</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mshoes.jpg" alt="">
+            <h2 class="c-text__vh">シューズ</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mjewelry.jpg" alt="">
+            <h2 class="c-text__vh">ジュエリー</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+        <li class="p-scrollList__item">
+          <a href="#">
+            <img src="assets/images/mouter.jpg" alt="">
+            <h2 class="c-text__vh">コート&アウター</h2>
+          </a>
+          <a href="">商品を見る</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="l-scroll__women">
       <ul class="p-scrollList">
         <li class="p-scrollList__item">
           <a href="#">
@@ -69,6 +136,58 @@
         </li>
       </ul>
     </div>
+  </div>
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menBtn = document.getElementById("m_btn");
+        const womenBtn = document.getElementById("w_btn");
+        const menList = document.querySelector(".l-scroll__men");
+        const womenList = document.querySelector(".l-scroll__women");
+
+        // 初期状態
+        menBtn.classList.add("active");
+        menList.classList.add("active");
+
+        // Slick初期化（両リスト）
+        $('.l-scroll__men .p-scrollList, .l-scroll__women .p-scrollList').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '150px',
+          arrows: false,
+          dots: false,
+          autoplay: false,
+          responsive: [
+            { breakpoint: 990, settings: { centerPadding: false, } }
+          ]
+        });
+
+        // メンズボタンクリック
+        menBtn.addEventListener("click", function () {
+          menList.classList.add("active");
+          womenList.classList.remove("active");
+          menBtn.classList.add("active");
+          womenBtn.classList.remove("active");
+
+          $('.l-scroll__men .p-scrollList').slick('setPosition');
+        });
+
+        // ウィメンズボタンクリック
+        womenBtn.addEventListener("click", function () {
+          womenList.classList.add("active");
+          menList.classList.remove("active");
+          womenBtn.classList.add("active");
+          menBtn.classList.remove("active");
+
+          $('.l-scroll__women .p-scrollList').slick('setPosition');
+        });
+      });
+
+
+    </script>
 
 
     <div class="l-about">

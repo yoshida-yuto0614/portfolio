@@ -1,3 +1,33 @@
-.btn {
-	color: #fff;
+.c-btn {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+
+
+  button {
+    display: block;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #fff;
+    border: 1px #000 solid;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+    &.active {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+
+  &__men {
+    border-radius: 15px 0 0 15px;
+  }
+
+  &__women {
+      border-radius: 0 15px 15px 0;
+  }
 }

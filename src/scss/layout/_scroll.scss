@@ -1,4 +1,25 @@
 .l-scroll {
-  padding: 80px  0px;
+  height: 800px;
+  padding: 80px 0px;
   text-align: center;
+
+  &__men {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  &__women {
+    visibility: hidden;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s ease;
+    &.active {
+      visibility: visible;
+        opacity: 1;
+        height: auto;
+    }
+  }
 }
