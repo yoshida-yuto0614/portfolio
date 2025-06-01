@@ -33,14 +33,18 @@
 <!-- SlickのJS -->
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<link href="../assets/stylesheets/bundlece08558eb608fc1280d2.css" rel="stylesheet"></head>
+<link href="../assets/stylesheets/bundlee94336dce19341e23e3a.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
   <header class="l-header">
     <div class="p-headerContents">
       <div class="p-headerContents__logo">
-        <h1 class="c-logo">Paul Smith</h1>
+        <h1 class="c-logo">YY</h1>
       </div>
         <div class="p-headerMenu">
           <ul class="p-headerMenu__list">
@@ -141,11 +145,9 @@
             const resetNavigation = () => {
 
               if (window.innerWidth >= breakSP) {
-                console.log("SP以上: ナビゲーションをロゴの直後に移動");
                 headerContents.insertBefore(navigation, logo.nextSibling);
                 navigation.style.display = "";
               } else {
-                console.log("SP未満: ナビゲーションを元の位置に戻す");
                 header.appendChild(navigation);
                 navigation.style.display = "flex";
               }
@@ -176,7 +178,7 @@
   <ul class="p-footerMenu">
 
     <li class="p-footerMenu__list">
-      <div class="p-footerMenu__title">ポール・スミスについて</div>
+      <div class="p-footerMenu__title">YYについて</div>
       <ul class="p-contents__list">
         <li class="p-contents__item"><a href="#">会社情報</a></li>
         <li class="p-contents__item"><a href="#">採用(英国サイト)</a></li>
@@ -185,7 +187,7 @@
     </li>
 
     <li class="p-footerMenu__list">
-      <div class="p-footerMenu__title">JOI'X PAUL SMITH <br> MEMBERSについて</div>
+      <div class="p-footerMenu__title">JOI'X YY <br> MEMBERSについて</div>
       <ul class="p-contents__list">
         <li class="p-contents__item"><a href="#">会員契約</a></li>
         <li class="p-contents__item"><a href="#">ポイントサービスについて</a></li>
@@ -195,7 +197,7 @@
     <li class="p-footerMenu__list">
       <div class="p-footerMenu__title">カスタマーサービス</div>
       <ul class="p-contents__list">
-        <li class="p-contents__item"><a href="#">Paul Smith ONLINE SHOPとは</a></li>
+        <li class="p-contents__item"><a href="#">YY ONLINE SHOPとは</a></li>
         <li class="p-contents__item"><a href="#">ご注文からお届けまでの流れ</a></li>
         <li class="p-contents__item"><a href="#">配送について</a></li>
         <li class="p-contents__item"><a href="#">お支払い方法</a></li>
@@ -261,6 +263,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="../assets/javascripts/bundlece08558eb608fc1280d2.js"></script></body>
+<script type="text/javascript" src="../assets/javascripts/bundlee94336dce19341e23e3a.js"></script></body>
 </html>
 

@@ -33,6 +33,10 @@
 <!-- SlickのJS -->
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
 </head>
 <body>
@@ -40,7 +44,7 @@
   <header class="l-header">
     <div class="p-headerContents">
       <div class="p-headerContents__logo">
-        <h1 class="c-logo">Paul Smith</h1>
+        <h1 class="c-logo">YY</h1>
       </div>
         <div class="p-headerMenu">
           <ul class="p-headerMenu__list">
@@ -141,11 +145,9 @@
             const resetNavigation = () => {
 
               if (window.innerWidth >= breakSP) {
-                console.log("SP以上: ナビゲーションをロゴの直後に移動");
                 headerContents.insertBefore(navigation, logo.nextSibling);
                 navigation.style.display = "";
               } else {
-                console.log("SP未満: ナビゲーションを元の位置に戻す");
                 header.appendChild(navigation);
                 navigation.style.display = "flex";
               }
