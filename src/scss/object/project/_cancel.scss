@@ -1,0 +1,15 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.p-cancel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  top: 0;
+  left: 0;
+}

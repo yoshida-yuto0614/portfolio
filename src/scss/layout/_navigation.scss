@@ -10,9 +10,10 @@ $sp: 990px;
   align-items: center;
   position: absolute;
   left: 160px;
+
   @include sp {
-      margin-top: 5px;
-      transition: opacity 0.3s ease-in-out;
-      position: unset;
-    }
+    margin-top: 5px;
+    transition: opacity 0.3s ease-in-out;
+    position: unset;
+  }
 }

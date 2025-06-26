@@ -28,6 +28,11 @@ $sp: 990px;
     transition: color 0.3s;
     font-size: 1rem;
     font-weight: bold;
+
+    &:hover {
+      font-style: italic;
+    }
+
     @include sp {
       font-size: 0.8rem;
       ;

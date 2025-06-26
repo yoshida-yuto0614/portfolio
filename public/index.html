@@ -41,132 +41,204 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<link href="assets/stylesheets/bundlee94336dce19341e23e3a.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundledb77732c71057d6ea253.css" rel="stylesheet"></head>
 <body>
+  <style>
+    body.no-scroll {
+    overflow: hidden;
+      }
+  </style>
 <div class="l-wrap">
   <header class="l-header">
     <div class="p-headerContents">
+
       <div class="p-headerContents__logo">
         <h1 class="c-logo">YY</h1>
       </div>
-        <div class="p-headerMenu">
-          <ul class="p-headerMenu__list">
-            <li class="p-headerMenu__item"><a href="#">店舗検索</a></li>
-            <li class="p-headerMenu__item"><a href="#">検索</a></li>
-            <li class="p-headerMenu__item"><a href="#">ヘルプ</a></li>
-          </ul>
 
-          <div class="p-headerMenu__icon">
-            <ul class="p-headerMenu__iconList">
-              <li class="p-headerMenu__iconItem">
-                <a class="p-headerMenu__iconItem--img" href="#">
-                  <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
-                </a>
-              </li>
-              <li class="p-headerMenu__iconItem">
-                <a class="p-headerMenu__iconItem--img" href="#">
-                  <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
-                </a>
-              </li>
-              <li class="p-headerMenu__iconItem">
-                <a class="p-headerMenu__iconItem--img" href="#">
-                  <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="p-headerMenu">
+        <ul class="p-headerMenu__list">
+          <li class="p-headerMenu__item"><a href="#">店舗検索</a></li>
+          <li class="p-headerMenu__item"><a href="#">検索</a></li>
+          <li class="p-headerMenu__item"><a href="#">ヘルプ</a></li>
+        </ul>
+
+      <div class="p-headerMenu__icon">
+        <ul class="p-headerMenu__iconList">
+          <li class="p-headerMenu__iconItem">
+            <a class="p-headerMenu__iconItem--img" href="#">
+              <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
+            </a>
+          </li>
+          <li class="p-headerMenu__iconItem">
+            <a class="p-headerMenu__iconItem--img" href="#">
+              <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
+            </a>
+          </li>
+          <li class="p-headerMenu__iconItem">
+            <a class="p-headerMenu__iconItem--img" href="#">
+              <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-        <nav class="l-navigation">
-          <ul class="p-navigationList">
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">セール</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">新着</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">メンズ</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">ウィメンズ</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">ジュニア</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">ホーム</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">ギフト</a>
-            </li>
-            <li class="p-navigationList__item">
-              <a href="#" class="p-navigationList__title">ディスカバー</a>
-            </li>
-          </ul>
-        </nav>
+<nav class="l-navigation">
+  <ul class="p-navigationList">
+    <li class="p-navigationList__item">
+      <a href="#popup-sale" class="p-navigationList__title">セール</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-new" class="p-navigationList__title">新着</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-men" class="p-navigationList__title">メンズ</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-women" class="p-navigationList__title">ウィメンズ</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-junior" class="p-navigationList__title">ジュニア</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-home" class="p-navigationList__title">ホーム</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-gift" class="p-navigationList__title">ギフト</a>
+    </li>
+    <li class="p-navigationList__item">
+      <a href="#popup-discover" class="p-navigationList__title">ディスカバー</a>
+    </li>
+  </ul>
+</nav>
+
+<div id="popup-sale" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__sale">
+    <li class="p-popupItem"><a href="#">セールのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-new" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__new">
+    <li class="p-popupItem"><a href="#">新着アイテムのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-men" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__men">
+    <li class="p-popupItem"><a href="#">メンズのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-women" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__women">
+    <li class="p-popupItem"><a href="#">ウィメンズのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-junior" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__junior">
+    <li class="p-popupItem"><a href="#">ジュニアのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-home" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__home">
+    <li class="p-popupItem"><a href="#">ホームのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-gift" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__gift">
+    <li class="p-popupItem"><a href="#">ギフトのポップアップ内容です。</a></li>
+  </ul>
+</div>
+
+<div id="popup-discover" class="l-overlay">
+  <a class="p-cancel" href="#"></a>
+  <ul class="l-popup c-color__discover">
+    <li class="p-popupItem"><a href="#">ディスカバーのポップアップ内容です。</a></li>
+  </ul>
+</div>
 
 
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
+    const header = document.querySelector(".l-header");
+    const navigation = document.querySelector(".l-navigation");
+    const logo = document.querySelector(".p-headerContents__logo");
+    const headerContents = document.querySelector(".p-headerContents");
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const header = document.querySelector(".l-header");
-            const navigation = document.querySelector(".l-navigation");
-            const logo = document.querySelector(".p-headerContents__logo");
-            const headerContents = document.querySelector(".p-headerContents");
+    const breakSP = 990;
+    let lastScrollY = window.scrollY;
 
-            const breakSP = 990;
-            let lastScrollY = window.scrollY;
+    const toggleHeaderVisibility = () => {
+      const currentScrollY = window.scrollY;
 
-            // ヘッダー表示/非表示
-            const toggleHeaderVisibility = () => {
-              const currentScrollY = window.scrollY;
+      // スクロールによるヘッダーの表示切替
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("hidden");
+      } else if (currentScrollY < lastScrollY) {
+        header.classList.remove("hidden");
+      }
 
-              if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // 下にスクロールした場合
-                header.classList.add("hidden");
-              } else if (currentScrollY < lastScrollY) {
-                // 上にスクロールした場合
-                header.classList.remove("hidden");
-              }
+      // ナビゲーション非表示（モバイル時）
+      if (window.innerWidth < breakSP) {
+        if (currentScrollY > lastScrollY) {
+          navigation.style.display = "none";
+        } else if (currentScrollY === 0) {
+          navigation.style.display = "flex";
+        }
+      }
 
-              //`l-navigation` を非表示
-              if (window.innerWidth < breakSP) {
-                if (currentScrollY > lastScrollY) {
-                  navigation.style.display = "none";
-                } else if (currentScrollY === 0) {
-                  navigation.style.display = "flex";
-                }
-              }
+      lastScrollY = currentScrollY;
+    };
 
-              lastScrollY = currentScrollY;
-            };
+    const resetNavigation = () => {
+      if (window.innerWidth >= breakSP) {
+        headerContents.insertBefore(navigation, logo.nextSibling);
+        navigation.style.display = "";
+      } else {
+        header.appendChild(navigation);
+        navigation.style.display = "flex";
+      }
+    };
 
-            // ナビゲーションを元の位置に戻す
-            const resetNavigation = () => {
+    window.addEventListener("scroll", toggleHeaderVisibility);
+    window.addEventListener("resize", resetNavigation);
+    resetNavigation(); // 初期配置実行
 
-              if (window.innerWidth >= breakSP) {
-                headerContents.insertBefore(navigation, logo.nextSibling);
-                navigation.style.display = "";
-              } else {
-                header.appendChild(navigation);
-                navigation.style.display = "flex";
-              }
-            };
+    // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
+    const overlays = document.querySelectorAll(".l-overlay");
 
-            // イベントリスナーを登録
-            window.addEventListener("scroll", toggleHeaderVisibility);
-            window.addEventListener("resize", resetNavigation);
+    overlays.forEach(overlay => {
+      // ポップアップを開く時
+      const triggerLinks = document.querySelectorAll(`a[href="#${overlay.id}"]`);
+      triggerLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          document.body.classList.add("no-scroll");
+        });
+      });
 
-            // 初期実行
-            resetNavigation();
-          });
-
-
-
-      </script>
+      // ポップアップを閉じる時
+      overlay.addEventListener("click", (e) => {
+        if (e.target.classList.contains("p-cancel")) {
+          document.body.classList.remove("no-scroll");
+        }
+      });
+    });
+  });
+</script>
 
   </header>
 
@@ -191,58 +263,58 @@
         <li class="p-scrollList__item">
           <a href="#">
             <img src="" alt="">
-            <h2 class="c-text__vh"></h2>
+            <h2 class="c-text__27px"></h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshoes.jpg" alt="">
-            <h2 class="c-text__vh">シューズ&スニーカー</h2>
+            <h2 class="c-text__27px">シューズ&スニーカー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshirt.jpg" alt="">
-            <h2 class="c-text__vh">カジュアルシャツ</h2>
+            <h2 class="c-text__27px">カジュアルシャツ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/msweatshirt.jpg" alt="">
-            <h2 class="c-text__vh">スウェット&パーカー</h2>
+            <h2 class="c-text__27px">スウェット&パーカー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mt-shirt.jpg" alt="">
-            <h2 class="c-text__vh">Tシャツ</h2>
+            <h2 class="c-text__27px">Tシャツ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshoes.jpg" alt="">
-            <h2 class="c-text__vh">シューズ</h2>
+            <h2 class="c-text__27px">シューズ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mjewelry.jpg" alt="">
-            <h2 class="c-text__vh">ジュエリー</h2>
+            <h2 class="c-text__27px">ジュエリー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mouter.jpg" alt="">
-            <h2 class="c-text__vh">コート&アウター</h2>
+            <h2 class="c-text__27px">コート&アウター</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
       </ul>
     </div>
@@ -253,58 +325,58 @@
         <li class="p-scrollList__item">
           <a href="#">
             <img src="" alt="">
-            <h2 class="c-text__vh">Sale Up To 70% Off</h2>
+            <h2 class="c-text__27px">Sale Up To 70% Off</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshoes.jpg" alt="">
-            <h2 class="c-text__vh">シューズ&スニーカー</h2>
+            <h2 class="c-text__27px">シューズ&スニーカー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshirt.jpg" alt="">
-            <h2 class="c-text__vh">カジュアルシャツ</h2>
+            <h2 class="c-text__27px">カジュアルシャツ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/msweatshirt.jpg" alt="">
-            <h2 class="c-text__vh">スウェット&パーカー</h2>
+            <h2 class="c-text__27px">スウェット&パーカー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mt-shirt.jpg" alt="">
-            <h2 class="c-text__vh">Tシャツ</h2>
+            <h2 class="c-text__27px">Tシャツ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mshoes.jpg" alt="">
-            <h2 class="c-text__vh">シューズ</h2>
+            <h2 class="c-text__27px">シューズ</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mjewelry.jpg" alt="">
-            <h2 class="c-text__vh">ジュエリー</h2>
+            <h2 class="c-text__27px">ジュエリー</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
         <li class="p-scrollList__item">
           <a href="#">
             <img src="assets/images/mouter.jpg" alt="">
-            <h2 class="c-text__vh">コート&アウター</h2>
+            <h2 class="c-text__27px">コート&アウター</h2>
           </a>
-          <a href="#" class="c-text__24px">商品を見る</a>
+          <a href="#" class="c-text__16px">商品を見る</a>
         </li>
       </ul>
     </div>
@@ -567,6 +639,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundlee94336dce19341e23e3a.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundledb77732c71057d6ea253.js"></script></body>
 </html>
 

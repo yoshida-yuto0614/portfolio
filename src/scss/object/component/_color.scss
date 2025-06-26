@@ -1,0 +1,38 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.c-color__sale {
+  background-color: #ffe0e0;
+}
+
+.c-color__new {
+  background-color: #e0f7fa;
+}
+
+.c-color__men {
+  background-color: #e3f2fd;
+}
+
+.c-color__women {
+  background-color: #fce4ec;
+}
+
+.c-color__junior {
+  background-color: #fff8e1;
+}
+
+.c-color__home {
+  background-color: #f1f8e9;
+}
+
+.c-color__gift {
+  background-color: #f3e5f5;
+}
+
+.c-color__discover {
+  background-color: #ede7f6;
+}

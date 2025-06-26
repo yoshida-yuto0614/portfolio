@@ -1,0 +1,17 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-popup {
+  position: relative;
+  margin: 0 auto;
+  padding: 50px;
+  background: yellow;
+  border-radius: 10px;
+  max-width: 98%;
+  height: 80%;
+  z-index: 1001;
+}

@@ -11,7 +11,6 @@
 
 .c-text__15px {
   font-size: 15px;
-  font-weight: bold;
   text-align: center;
 }
 
@@ -21,8 +20,8 @@
   color: #000;
 }
 
-.c-text__24px {
-  font-size: 24px;
+.c-text__16px {
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   position: relative;
@@ -56,6 +55,12 @@
   margin-top: 50px;
 }
 
+.c-text__27px {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 16px;
+}
+
 .c-text__28px {
   font-size: 28px;
   font-weight: bold;
@@ -66,10 +71,4 @@
   font-size: 50px;
   font-weight: bold;
   color: #fff;
-}
-
-.c-text__vh {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 16px;
 }

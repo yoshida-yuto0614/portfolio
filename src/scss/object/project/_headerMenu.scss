@@ -21,14 +21,19 @@ $sp: 990px;
   }
 
   &__item  {
-    margin-right: 10px;
+    margin-right: 20px;
     a {
       text-decoration: none;
       color: #000;
       transition: color 0.3s;
       font-size: 1rem;
       font-weight: bold;
-      @include sp {
+
+      &:hover {
+          font-style: italic;
+        }
+
+        @include sp {
         font-size: 0.8rem;
         }
     }

@@ -1,0 +1,22 @@
+$sp: 990px;
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-overlay {
+  position: fixed;
+  inset: 0;
+  top: 85.5px;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1000;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+}

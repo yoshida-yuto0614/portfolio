@@ -20,6 +20,8 @@
 @use 'layout/_scroll';
 @use 'layout/_about';
 @use 'layout/_animationBar';
+@use 'layout/_overlay';
+@use 'layout/_popup';
 
 /*// ==========================================================================
 // Object
@@ -35,6 +37,7 @@
 @use 'object/component/_icon';
 @use 'object/component/_text';
 @use 'object/component/_img';
+@use 'object/component/_color';
 
 
 /*// -----------------------------------------------------------------
@@ -53,6 +56,9 @@
 @use 'object/project/_footerBottom';
 @use 'object/project/_contents';
 @use 'object/project/_termsList';
+@use 'object/project/_cancel';
+@use 'object/project/_popupItem';
+
 
 
 /*// -----------------------------------------------------------------
