@@ -15,13 +15,7 @@
 @use 'layout/_header';
 @use 'layout/_main';
 @use 'layout/_footer';
-@use 'layout/_navigation';
 @use 'layout/_wrap';
-@use 'layout/_scroll';
-@use 'layout/_about';
-@use 'layout/_animationBar';
-@use 'layout/_overlay';
-@use 'layout/_popup';
 
 /*// ==========================================================================
 // Object
@@ -48,14 +42,20 @@
 @use 'object/project/_mainSection';
 @use 'object/project/_headerContents';
 @use 'object/project/_headerMenu';
+@use 'object/project/_navigation';
 @use 'object/project/_navigationList';
+@use 'object/project/_scroll';
 @use 'object/project/_scrollList';
+@use 'object/project/_about';
 @use 'object/project/_aboutList';
+@use 'object/project/_animationBar';
 @use 'object/project/_animationList';
 @use 'object/project/_footerMenu';
 @use 'object/project/_footerBottom';
 @use 'object/project/_contents';
 @use 'object/project/_termsList';
+@use 'object/project/_overlay';
+@use 'object/project/_popup';
 @use 'object/project/_cancel';
 @use 'object/project/_popupItem';
 

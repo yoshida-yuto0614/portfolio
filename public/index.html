@@ -41,7 +41,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<link href="assets/stylesheets/bundle0621ef05a7a49a1f7515.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundled2d391088cf1cfa39e0a.css" rel="stylesheet"></head>
 <body>
   <style>
     body.no-scroll {
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-<nav class="l-navigation">
+<nav class="p-navigation">
   <ul class="p-navigationList">
     <li class="p-navigationList__item">
       <a href="#popup-sale" class="p-navigationList__title">セール</a>
@@ -113,58 +113,60 @@
   </ul>
 </nav>
 
-<div id="popup-sale" class="l-overlay">
+<div id="popup-sale" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__sale">
+  <ul class="p-popup c-color__sale">
     <li class="p-popupItem"><a href="#">セールのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-new" class="l-overlay">
+<div id="popup-new" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__new">
-    <li class="p-popupItem"><a href="#">新着アイテムのポップアップ内容です。</a></li>
+  <ul class="p-popup c-color__new">
+    <li class="p-popupItem"><a href="#">メンズ新着</a></li>
+    <li class="p-popupItem"><a href="#">ウィメンズ新着</a></li>
+    <li class="p-popupItem"><a href="#">ジュニア新着</a></li>
   </ul>
 </div>
 
-<div id="popup-men" class="l-overlay">
+<div id="popup-men" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__men">
+  <ul class="p-popup c-color__men">
     <li class="p-popupItem"><a href="#">メンズのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-women" class="l-overlay">
+<div id="popup-women" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__women">
+  <ul class="p-popup c-color__women">
     <li class="p-popupItem"><a href="#">ウィメンズのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-junior" class="l-overlay">
+<div id="popup-junior" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__junior">
+  <ul class="p-popup c-color__junior">
     <li class="p-popupItem"><a href="#">ジュニアのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-home" class="l-overlay">
+<div id="popup-home" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__home">
+  <ul class="p-popup c-color__home">
     <li class="p-popupItem"><a href="#">ホームのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-gift" class="l-overlay">
+<div id="popup-gift" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__gift">
+  <ul class="p-popup c-color__gift">
     <li class="p-popupItem"><a href="#">ギフトのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-discover" class="l-overlay">
+<div id="popup-discover" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__discover">
+  <ul class="p-popup c-color__discover">
     <li class="p-popupItem"><a href="#">ディスカバーのポップアップ内容です。</a></li>
   </ul>
 </div>
@@ -175,7 +177,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
     const header = document.querySelector(".l-header");
-    const navigation = document.querySelector(".l-navigation");
+    const navigation = document.querySelector(".p-navigation");
     const logo = document.querySelector(".p-headerContents__logo");
     const headerContents = document.querySelector(".p-headerContents");
 
@@ -219,7 +221,7 @@
     resetNavigation(); // 初期配置実行
 
     // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
-    const overlays = document.querySelectorAll(".l-overlay");
+    const overlays = document.querySelectorAll(".p-overlay");
 
     overlays.forEach(overlay => {
       // ポップアップを開く時
@@ -257,8 +259,8 @@
       <button class="c-btn__women" id="w_btn">ウィメンズ</button>
     </div>
 
-  <div class="l-scroll">
-    <div class="l-scroll__men">
+  <div class="p-scroll">
+    <div class="p-scroll__men">
       <ul class="p-scrollList">
         <li class="p-scrollList__item">
           <a href="#">
@@ -320,7 +322,7 @@
     </div>
 
 
-    <div class="l-scroll__women">
+    <div class="p-scroll__women">
       <ul class="p-scrollList">
         <li class="p-scrollList__item">
           <a href="#">
@@ -388,15 +390,15 @@
       document.addEventListener("DOMContentLoaded", function () {
         const menBtn = document.getElementById("m_btn");
         const womenBtn = document.getElementById("w_btn");
-        const menList = document.querySelector(".l-scroll__men");
-        const womenList = document.querySelector(".l-scroll__women");
+        const menList = document.querySelector(".p-scroll__men");
+        const womenList = document.querySelector(".p-scroll__women");
 
         // 初期状態
         menBtn.classList.add("active");
         menList.classList.add("active");
 
         // Slick初期化（両リスト）
-        $('.l-scroll__men .p-scrollList, .l-scroll__women .p-scrollList').slick({
+        $('.p-scroll__men .p-scrollList, .p-scroll__women .p-scrollList').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
           centerMode: true,
@@ -416,7 +418,7 @@
           menBtn.classList.add("active");
           womenBtn.classList.remove("active");
 
-          $('.l-scroll__men .p-scrollList').slick('setPosition');
+          $('.p-scroll__men .p-scrollList').slick('setPosition');
         });
 
         // ウィメンズボタンクリック
@@ -426,13 +428,13 @@
           womenBtn.classList.add("active");
           menBtn.classList.remove("active");
 
-          $('.l-scroll__women .p-scrollList').slick('setPosition');
+          $('.p-scroll__women .p-scrollList').slick('setPosition');
         });
       });
     </script>
 
 
-    <div class="l-about">
+    <div class="p-about">
       <ul class="p-aboutList">
         <li class="p-aboutList__item">
           <img class="c-img__about" src="assets/images/about1.jpg" alt="写真">
@@ -465,7 +467,7 @@
     </div>
 
 
-    <div class="l-animationBar">
+    <div class="p-animationBar">
       <ul class="p-animationList">
         <li class="p-animationList__item">
           <a href="">
@@ -639,6 +641,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundle0621ef05a7a49a1f7515.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundled2d391088cf1cfa39e0a.js"></script></body>
 </html>
 

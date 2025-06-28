@@ -81,7 +81,7 @@
       </div>
     </div>
 
-<nav class="l-navigation">
+<nav class="p-navigation">
   <ul class="p-navigationList">
     <li class="p-navigationList__item">
       <a href="#popup-sale" class="p-navigationList__title">セール</a>
@@ -110,58 +110,60 @@
   </ul>
 </nav>
 
-<div id="popup-sale" class="l-overlay">
+<div id="popup-sale" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__sale">
+  <ul class="p-popup c-color__sale">
     <li class="p-popupItem"><a href="#">セールのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-new" class="l-overlay">
+<div id="popup-new" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__new">
-    <li class="p-popupItem"><a href="#">新着アイテムのポップアップ内容です。</a></li>
+  <ul class="p-popup c-color__new">
+    <li class="p-popupItem"><a href="#">メンズ新着</a></li>
+    <li class="p-popupItem"><a href="#">ウィメンズ新着</a></li>
+    <li class="p-popupItem"><a href="#">ジュニア新着</a></li>
   </ul>
 </div>
 
-<div id="popup-men" class="l-overlay">
+<div id="popup-men" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__men">
+  <ul class="p-popup c-color__men">
     <li class="p-popupItem"><a href="#">メンズのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-women" class="l-overlay">
+<div id="popup-women" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__women">
+  <ul class="p-popup c-color__women">
     <li class="p-popupItem"><a href="#">ウィメンズのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-junior" class="l-overlay">
+<div id="popup-junior" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__junior">
+  <ul class="p-popup c-color__junior">
     <li class="p-popupItem"><a href="#">ジュニアのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-home" class="l-overlay">
+<div id="popup-home" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__home">
+  <ul class="p-popup c-color__home">
     <li class="p-popupItem"><a href="#">ホームのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-gift" class="l-overlay">
+<div id="popup-gift" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__gift">
+  <ul class="p-popup c-color__gift">
     <li class="p-popupItem"><a href="#">ギフトのポップアップ内容です。</a></li>
   </ul>
 </div>
 
-<div id="popup-discover" class="l-overlay">
+<div id="popup-discover" class="p-overlay">
   <a class="p-cancel" href="#"></a>
-  <ul class="l-popup c-color__discover">
+  <ul class="p-popup c-color__discover">
     <li class="p-popupItem"><a href="#">ディスカバーのポップアップ内容です。</a></li>
   </ul>
 </div>
@@ -172,7 +174,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
     const header = document.querySelector(".l-header");
-    const navigation = document.querySelector(".l-navigation");
+    const navigation = document.querySelector(".p-navigation");
     const logo = document.querySelector(".p-headerContents__logo");
     const headerContents = document.querySelector(".p-headerContents");
 
@@ -216,7 +218,7 @@
     resetNavigation(); // 初期配置実行
 
     // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
-    const overlays = document.querySelectorAll(".l-overlay");
+    const overlays = document.querySelectorAll(".p-overlay");
 
     overlays.forEach(overlay => {
       // ポップアップを開く時
