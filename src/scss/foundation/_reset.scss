@@ -19,7 +19,12 @@ html{
 	TODO test putting a class on HEAD.
 		- Fails on FF.
 */
-body,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body.no-scroll {
+  overflow: hidden;
+}
 div,
 dl,
 dt,
