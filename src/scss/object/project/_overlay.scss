@@ -15,8 +15,19 @@ $sp: 990px;
   transition: opacity 0.3s;
   z-index: 1000;
 
+    @include sp {
+        top: 65px;
+      }
+
   &:target {
     visibility: visible;
     opacity: 1;
   }
+
+&.is-active {
+  display: block !important;
+  visibility: visible;
+  opacity: 1;
+}
+
 }

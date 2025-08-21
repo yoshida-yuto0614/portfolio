@@ -41,7 +41,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-<link href="assets/stylesheets/bundlec571edd0e1563d75eee3.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundle15aac54e7da410e45af2.css" rel="stylesheet"></head>
 
 <body>
 <div class="l-wrap">
@@ -59,26 +59,41 @@
           <li class="p-headerMenu__item"><a href="#">ヘルプ</a></li>
         </ul>
 
-      <div class="p-headerMenu__icon">
-        <ul class="p-headerMenu__iconList">
-          <li class="p-headerMenu__iconItem">
-            <a class="p-headerMenu__iconItem--img" href="#">
-              <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
-            </a>
-          </li>
-          <li class="p-headerMenu__iconItem">
-            <a class="p-headerMenu__iconItem--img" href="#">
-              <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
-            </a>
-          </li>
-          <li class="p-headerMenu__iconItem">
-            <a class="p-headerMenu__iconItem--img" href="#">
-              <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
-            </a>
-          </li>
-        </ul>
+        <div class="p-headerMenu__icon">
+          <ul class="p-headerMenu__iconList">
+            <li class="p-headerMenu__iconItem">
+              <a class="p-headerMenu__iconItem--img" href="#">
+                <img class="c-icon" src="assets/images/smile.jpg" alt="ニコニコ">
+              </a>
+            </li>
+            <li class="p-headerMenu__iconItem">
+              <a class="p-headerMenu__iconItem--img" href="#">
+                <img class="c-icon" src="assets/images/favorite.jpg" alt="お気に入り">
+              </a>
+            </li>
+            <li class="p-headerMenu__iconItem">
+              <a class="p-headerMenu__iconItem--img" href="#">
+                <img class="c-icon" src="assets/images/shopping_cart.jpg" alt="カート">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="p-hamburgers" id="hamburgers" data-popup="overlayMenu">
+          <span class="p-hamburgers__line"></span>
+          <span class="p-hamburgers__line"></span>
+          <span class="p-hamburgers__line"></span>
+        </button>
       </div>
-    </div>
+
+      <div id="overlayMenu" class="p-overlay">
+        <a class="p-cancel" href="#"></a>
+          <ul class="p-popup c-color__hamburgers">
+            <li class="p-popupItem"><a href="#">メニュー2</a></li>
+            <li class="p-popupItem"><a href="#">メニュー3</a></li>
+            <li class="p-popupItem"><a href="#">メニュー1</a></li>
+          </ul>
+</div>
 
 <nav class="p-navigation">
   <ul class="p-navigationList">
@@ -168,9 +183,27 @@
 </div>
 
 
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // === ▼ ハンバーガーメニュー制御 ▼ ===
+    const hamburgers = document.querySelector('#hamburgers');
+    const overlayMenu = document.getElementById('overlayMenu');
+
+    if (hamburgers && overlayMenu) {
+      hamburgers.addEventListener('click', () => {
+        hamburgers.classList.toggle('is-active');
+        overlayMenu.classList.toggle('is-active');
+      });
+
+      // オーバーレイ背景クリックで閉じる
+      overlayMenu.addEventListener('click', (e) => {
+        if (e.target === overlayMenu) {
+          hamburgers.classList.remove('is-active');
+          overlayMenu.classList.remove('is-active');
+        }
+      });
+    }
+
     // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
     const header = document.querySelector(".l-header");
     const navigation = document.querySelector(".p-navigation");
@@ -237,6 +270,75 @@
     });
   });
 </script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
+    const header = document.querySelector(".l-header");
+    const navigation = document.querySelector(".p-navigation");
+    const logo = document.querySelector(".p-headerContents__logo");
+    const headerContents = document.querySelector(".p-headerContents");
+
+    const breakSP = 990;
+    let lastScrollY = window.scrollY;
+
+    const toggleHeaderVisibility = () => {
+      const currentScrollY = window.scrollY;
+
+      // スクロールによるヘッダーの表示切替
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("hidden");
+      } else if (currentScrollY < lastScrollY) {
+        header.classList.remove("hidden");
+      }
+
+      // ナビゲーション非表示（モバイル時）
+      if (window.innerWidth < breakSP) {
+        if (currentScrollY > lastScrollY) {
+          navigation.style.display = "none";
+        } else if (currentScrollY === 0) {
+          navigation.style.display = "flex";
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    const resetNavigation = () => {
+      if (window.innerWidth >= breakSP) {
+        headerContents.insertBefore(navigation, logo.nextSibling);
+        navigation.style.display = "";
+      } else {
+        header.appendChild(navigation);
+        navigation.style.display = "flex";
+      }
+    };
+
+    window.addEventListener("scroll", toggleHeaderVisibility);
+    window.addEventListener("resize", resetNavigation);
+    resetNavigation(); // 初期配置実行
+
+    // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
+    const overlays = document.querySelectorAll(".p-overlay");
+
+    overlays.forEach(overlay => {
+      // ポップアップを開く時
+      const triggerLinks = document.querySelectorAll(`a[href="#${overlay.id}"]`);
+      triggerLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          document.body.classList.add("no-scroll");
+        });
+      });
+
+      // ポップアップを閉じる時
+      overlay.addEventListener("click", (e) => {
+        if (e.target.classList.contains("p-cancel")) {
+          document.body.classList.remove("no-scroll");
+        }
+      });
+    });
+  });
+</script> -->
 
   </header>
 
@@ -637,6 +739,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundlec571edd0e1563d75eee3.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundle15aac54e7da410e45af2.js"></script></body>
 </html>
 

@@ -9,8 +9,9 @@ $sp: 990px;
   display: flex;
   align-items: center;
   margin: 20px;
+
   @include sp {
-     margin: 0px;
+    margin: 0px;
     }
 
   &__list {
@@ -18,7 +19,12 @@ $sp: 990px;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include sp {
+      display: none;
+      }
   }
+
 
   &__item  {
     margin-right: 20px;

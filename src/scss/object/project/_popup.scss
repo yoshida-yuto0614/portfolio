@@ -13,4 +13,10 @@ $sp: 990px;
   max-width: 98%;
   height: 80%;
   z-index: 1001;
+
+  @include sp {
+      max-width: 100%;
+      border-radius: 0px;
+    }
+
 }
