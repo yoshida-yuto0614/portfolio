@@ -86,11 +86,16 @@
       <div id="overlayMenu" class="p-overlay">
         <a class="p-cancel" href="#"></a>
           <ul class="p-popup c-color__hamburgers">
-            <li class="p-popupItem"><a href="#">メニュー2</a></li>
-            <li class="p-popupItem"><a href="#">メニュー3</a></li>
-            <li class="p-popupItem"><a href="#">メニュー1</a></li>
+            <li class="p-popupItem"><a href="#popup-sale">セール</a></li>
+            <li class="p-popupItem"><a href="#popup-new">新着</a></li>
+            <li class="p-popupItem"><a href="#popup-men">メンズ</a></li>
+            <li class="p-popupItem"><a href="#popup-women">ウィメンズ</a></li>
+            <li class="p-popupItem"><a href="#popup-junior">ジュニア</a></li>
+            <li class="p-popupItem"><a href="#popup-home">ホーム</a></li>
+            <li class="p-popupItem"><a href="#popup-gift">ギフト</a></li>
+            <li class="p-popupItem"><a href="#popup-discover">ディスカバリー</a></li>
           </ul>
-</div>
+      </div>
 
 <nav class="p-navigation">
   <ul class="p-navigationList">
@@ -124,7 +129,7 @@
 <div id="popup-sale" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__sale">
-    <li class="p-popupItem"><a href="#">セールのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="/sale">セールのポップアップ内容です。</a></li>
   </ul>
 </div>
 
@@ -140,63 +145,88 @@
 <div id="popup-men" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__men">
-    <li class="p-popupItem"><a href="#">メンズのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">新着</a></li>
+    <li class="p-popupItem"><a href="#">ベストセラー</a></li>
+    <li class="p-popupItem"><a href="#">メンズ ギフト</a></li>
+    <li class="p-popupItem"><a href="#">モノグララミング</a></li>
+    <li class="p-popupItem"><a href="#">大きめサイズ</a></li>
   </ul>
 </div>
 
 <div id="popup-women" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__women">
-    <li class="p-popupItem"><a href="#">ウィメンズのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">新着</a></li>
+    <li class="p-popupItem"><a href="#">ベストセラー</a></li>
+    <li class="p-popupItem"><a href="#">ウィメンズ ギフト</a></li>
+    <li class="p-popupItem"><a href="#">モノグララミング</a></li>
+    <li class="p-popupItem"><a href="#">大きめサイズ</a></li>
+    <li class="p-popupItem"><a href="#">小さめサイズ</a></li>
   </ul>
 </div>
 
 <div id="popup-junior" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__junior">
-    <li class="p-popupItem"><a href="#">ジュニアのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">新着</a></li>
   </ul>
 </div>
 
 <div id="popup-home" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__home">
-    <li class="p-popupItem"><a href="#">ホームのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">ステーショナリー</a></li>
+    <li class="p-popupItem"><a href="#">テーブルウェア</a></li>
+    <li class="p-popupItem"><a href="#">携帯ケース&IT</a></li>
+    <li class="p-popupItem"><a href="#">インテリア</a></li>
   </ul>
 </div>
 
 <div id="popup-gift" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__gift">
-    <li class="p-popupItem"><a href="#">ギフトのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">メンズギフト</a></li>
+    <li class="p-popupItem"><a href="#">ウィメンズギフト</a></li>
   </ul>
 </div>
 
 <div id="popup-discover" class="p-overlay">
   <a class="p-cancel" href="#"></a>
   <ul class="p-popup c-color__discover">
-    <li class="p-popupItem"><a href="#">ディスカバーのポップアップ内容です。</a></li>
+    <li class="p-popupItem"><a href="#">ストーリーズ</a></li>
+    <li class="p-popupItem"><a href="#">ニュース</a></li>
+    <li class="p-popupItem"><a href="#">コラボレーション</a></li>
   </ul>
 </div>
 
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+
     // === ▼ ハンバーガーメニュー制御 ▼ ===
     const hamburgers = document.querySelector('#hamburgers');
     const overlayMenu = document.getElementById('overlayMenu');
+    const body = document.body;
 
     if (hamburgers && overlayMenu) {
       hamburgers.addEventListener('click', () => {
+        const isOpen = overlayMenu.classList.toggle('is-active');
         hamburgers.classList.toggle('is-active');
-        overlayMenu.classList.toggle('is-active');
+
+        // 開いたらスクロール禁止
+        if (isOpen) {
+          body.classList.add("no-scroll");
+        } else {
+          body.classList.remove("no-scroll");
+        }
       });
 
-      // オーバーレイ背景クリックで閉じる
+      // 背景クリックで閉じる
       overlayMenu.addEventListener('click', (e) => {
-        if (e.target === overlayMenu) {
-          hamburgers.classList.remove('is-active');
-          overlayMenu.classList.remove('is-active');
+        if (e.target.classList.contains("p-cancel")) {
+          overlayMenu.classList.remove("is-active");
+          hamburgers.classList.remove("is-active");
+          body.classList.remove("no-scroll");
         }
       });
     }
@@ -212,15 +242,12 @@
 
     const toggleHeaderVisibility = () => {
       const currentScrollY = window.scrollY;
-
-      // スクロールによるヘッダーの表示切替
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         header.classList.add("hidden");
       } else if (currentScrollY < lastScrollY) {
         header.classList.remove("hidden");
       }
 
-      // ナビゲーション非表示（モバイル時）
       if (window.innerWidth < breakSP) {
         if (currentScrollY > lastScrollY) {
           navigation.style.display = "none";
@@ -244,97 +271,156 @@
 
     window.addEventListener("scroll", toggleHeaderVisibility);
     window.addEventListener("resize", resetNavigation);
-    resetNavigation(); // 初期配置実行
+    resetNavigation();
 
-    // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
-    const overlays = document.querySelectorAll(".p-overlay");
+    // === ▼ ポップアップ（各カテゴリ）制御 ▼ ===
+    const overlays = document.querySelectorAll(".p-overlay:not(#overlayMenu)");
+    const navLinks = document.querySelectorAll('.p-navigationList__item a[href^="#popup-"]');
+
+    function closeAllOverlays() {
+      overlays.forEach(overlay => overlay.classList.remove("is-active"));
+      body.classList.remove("no-scroll");
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // ハンバーガーメニュー開いていたら閉じる
+        if (overlayMenu.classList.contains("is-active")) {
+          overlayMenu.classList.remove("is-active");
+          hamburgers.classList.remove("is-active");
+        }
+
+        const targetId = link.getAttribute("href").replace("#", "");
+        const targetOverlay = document.getElementById(targetId);
+
+        if (!targetOverlay) return;
+
+        if (targetOverlay.classList.contains("is-active")) {
+          closeAllOverlays();
+          return;
+        }
+
+        closeAllOverlays();
+        targetOverlay.classList.add("is-active");
+        body.classList.add("no-scroll");
+      });
+    });
 
     overlays.forEach(overlay => {
-      // ポップアップを開く時
-      const triggerLinks = document.querySelectorAll(`a[href="#${overlay.id}"]`);
-      triggerLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          document.body.classList.add("no-scroll");
-        });
-      });
-
-      // ポップアップを閉じる時
       overlay.addEventListener("click", (e) => {
         if (e.target.classList.contains("p-cancel")) {
-          document.body.classList.remove("no-scroll");
+          closeAllOverlays();
         }
       });
     });
+
   });
 </script>
 
+
 <!-- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
-    const header = document.querySelector(".l-header");
-    const navigation = document.querySelector(".p-navigation");
-    const logo = document.querySelector(".p-headerContents__logo");
-    const headerContents = document.querySelector(".p-headerContents");
+document.addEventListener("DOMContentLoaded", () => {
+  // === ▼ ハンバーガーメニュー制御 ▼ ===
+  const hamburgers = document.querySelector('#hamburgers');
+  const overlayMenu = document.getElementById('overlayMenu');
 
-    const breakSP = 990;
-    let lastScrollY = window.scrollY;
+  if (hamburgers && overlayMenu) {
+    hamburgers.addEventListener('click', () => {
+      hamburgers.classList.toggle('is-active');
+      overlayMenu.classList.toggle('is-active');
+    });
 
-    const toggleHeaderVisibility = () => {
-      const currentScrollY = window.scrollY;
-
-      // スクロールによるヘッダーの表示切替
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        header.classList.add("hidden");
-      } else if (currentScrollY < lastScrollY) {
-        header.classList.remove("hidden");
+    overlayMenu.addEventListener('click', (e) => {
+      if (e.target === overlayMenu) {
+        hamburgers.classList.remove('is-active');
+        overlayMenu.classList.remove('is-active');
       }
+    });
+  }
 
-      // ナビゲーション非表示（モバイル時）
-      if (window.innerWidth < breakSP) {
-        if (currentScrollY > lastScrollY) {
-          navigation.style.display = "none";
-        } else if (currentScrollY === 0) {
-          navigation.style.display = "flex";
-        }
-      }
+  // === ▼ ヘッダー表示制御・ナビ再配置 ▼ ===
+  const header = document.querySelector(".l-header");
+  const navigation = document.querySelector(".p-navigation");
+  const logo = document.querySelector(".p-headerContents__logo");
+  const headerContents = document.querySelector(".p-headerContents");
 
-      lastScrollY = currentScrollY;
-    };
+  const breakSP = 990;
+  let lastScrollY = window.scrollY;
 
-    const resetNavigation = () => {
-      if (window.innerWidth >= breakSP) {
-        headerContents.insertBefore(navigation, logo.nextSibling);
-        navigation.style.display = "";
-      } else {
-        header.appendChild(navigation);
+  const toggleHeaderVisibility = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      header.classList.add("hidden");
+    } else if (currentScrollY < lastScrollY) {
+      header.classList.remove("hidden");
+    }
+
+    if (window.innerWidth < breakSP) {
+      if (currentScrollY > lastScrollY) {
+        navigation.style.display = "none";
+      } else if (currentScrollY === 0) {
         navigation.style.display = "flex";
       }
-    };
+    }
 
-    window.addEventListener("scroll", toggleHeaderVisibility);
-    window.addEventListener("resize", resetNavigation);
-    resetNavigation(); // 初期配置実行
+    lastScrollY = currentScrollY;
+  };
 
-    // === ▼ ポップアップ表示時にスクロール無効化 ▼ ===
-    const overlays = document.querySelectorAll(".p-overlay");
+  const resetNavigation = () => {
+    if (window.innerWidth >= breakSP) {
+      headerContents.insertBefore(navigation, logo.nextSibling);
+      navigation.style.display = "";
+    } else {
+      header.appendChild(navigation);
+      navigation.style.display = "flex";
+    }
+  };
 
-    overlays.forEach(overlay => {
-      // ポップアップを開く時
-      const triggerLinks = document.querySelectorAll(`a[href="#${overlay.id}"]`);
-      triggerLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          document.body.classList.add("no-scroll");
-        });
-      });
+  window.addEventListener("scroll", toggleHeaderVisibility);
+  window.addEventListener("resize", resetNavigation);
+  resetNavigation();
 
-      // ポップアップを閉じる時
-      overlay.addEventListener("click", (e) => {
-        if (e.target.classList.contains("p-cancel")) {
-          document.body.classList.remove("no-scroll");
-        }
-      });
+  // === ▼ ポップアップ制御（完全トグル式）▼ ===
+  const body = document.body;
+  const overlays = document.querySelectorAll(".p-overlay");
+  const navLinks = document.querySelectorAll('.p-navigationList__item a[href^="#popup-"]');
+
+  function closeAllOverlays() {
+    overlays.forEach(overlay => overlay.classList.remove("is-active"));
+    body.classList.remove("no-scroll");
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").replace("#", "");
+      const targetOverlay = document.getElementById(targetId);
+
+      // 同じポップアップをもう一度押した場合は閉じる
+      if (targetOverlay.classList.contains("is-active")) {
+        closeAllOverlays();
+        return;
+      }
+
+      // 他のポップアップを閉じてから開く
+      closeAllOverlays();
+      targetOverlay.classList.add("is-active");
+      body.classList.add("no-scroll");
     });
   });
+
+  // 背景クリックで閉じる
+  overlays.forEach(overlay => {
+    overlay.addEventListener("click", (e) => {
+      if (e.target.classList.contains("p-cancel")) {
+        closeAllOverlays();
+      }
+    });
+  });
+
+});
 </script> -->
 
   </header>

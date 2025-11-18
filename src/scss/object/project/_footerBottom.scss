@@ -1,4 +1,5 @@
 $sp: 990px;
+
 @mixin sp {
   @media screen and (max-width: ($sp)) {
     @content;
@@ -8,11 +9,22 @@ $sp: 990px;
 .p-footerBottom {
   color: #fff;
   position: absolute;
-  bottom: 15%;
+  bottom: 100px;
   right: 10%;
   text-align: right;
 
+  @include sp {
+      display: flex;
+      bottom: 180px;
+      right: unset;
+      text-align: unset;
+    }
+
   &__list {
     margin-bottom: 15px;
+
+    @include sp {
+        display: none;
+      }
   }
 }

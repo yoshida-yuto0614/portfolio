@@ -1,3 +1,4 @@
+<footer>
 <footer class="l-footer">
   <ul class="p-footerMenu">
 
@@ -11,7 +12,7 @@
     </li>
 
     <li class="p-footerMenu__list">
-      <div class="p-footerMenu__title">JOI'X YY <br> MEMBERSについて</div>
+      <div class="p-footerMenu__title">YYYYYYYYYYYY MEMBERSについて</div>
       <ul class="p-contents__list">
         <li class="p-contents__item"><a href="#">会員契約</a></li>
         <li class="p-contents__item"><a href="#">ポイントサービスについて</a></li>
@@ -81,9 +82,56 @@
       <li class="p-termsList__item"><a href="#"></a>Privacy Policy</li>
       <li class="p-termsList__item"><a href="#"></a>Modern Slavery Statement</li>
     </ul>
-
   </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const footerLists = document.querySelectorAll(".p-footerMenu__list");
+      const footerBottom = document.querySelector(".p-footerBottom");
+      const footer = document.querySelector(".l-footer");
+
+      const updateFooterPadding = () => {
+        if (window.innerWidth > 990) {
+          footer.style.paddingBottom = `${footerBottom.offsetHeight + 40}px`;
+          return;
+        }
+
+        const open = document.querySelector(".p-footerMenu__list.is-open .p-contents__list");
+        const openHeight = open ? open.scrollHeight : 0;
+        const footerHeight = footerBottom ? footerBottom.offsetHeight : 0;
+        footer.style.paddingBottom = `${footerHeight + openHeight + 40}px`;
+      };
+
+      footerLists.forEach((list) => {
+        const title = list.querySelector(".p-footerMenu__title");
+        const content = list.querySelector(".p-contents__list");
+
+        title.addEventListener("click", () => {
+          if (window.innerWidth > 990) return;
+
+          // 他を閉じる
+          footerLists.forEach((item) => {
+            if (item !== list) {
+              item.classList.remove("is-open");
+              item.querySelector(".p-contents__list").style.maxHeight = null;
+            }
+          });
+
+          // 自分を開閉
+          list.classList.toggle("is-open");
+          content.style.maxHeight = list.classList.contains("is-open")
+            ? `${content.scrollHeight}px`
+            : null;
+
+          setTimeout(updateFooterPadding, 300);
+        });
+      });
+
+      // 初期化
+      updateFooterPadding();
+      window.addEventListener("resize", updateFooterPadding);
+    });
+</script>
 </footer>
 
 </div><!-- l-wrap -->

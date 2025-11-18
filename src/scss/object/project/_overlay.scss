@@ -16,13 +16,8 @@ $sp: 990px;
   z-index: 1000;
 
     @include sp {
-        top: 65px;
+        top: 110px;
       }
-
-  &:target {
-    visibility: visible;
-    opacity: 1;
-  }
 
 &.is-active {
   display: block !important;

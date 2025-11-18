@@ -6,13 +6,12 @@ $sp: 990px;
 }
 
 .p-popupItem {
-  margin-right: 40px;
+  margin-bottom: 10px;
     a {
       text-decoration: none;
       color: #000;
       transition: color 0.3s;
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 2rem;
 
       &:hover {
         font-style: italic;
