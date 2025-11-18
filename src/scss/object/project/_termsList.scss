@@ -10,6 +10,12 @@ $sp: 990px;
   color: #828282;
 
   @include sp {
-      // display:
+      font-size: unset;
+    }
+
+    &__item {
+      @include sp {
+          margin-bottom: 10px;
+        }
     }
 }
